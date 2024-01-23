@@ -1,0 +1,40 @@
+﻿@page
+@model GoodsManagementSystem.Pages.Client.IndexModel
+@{
+}
+<br></br>
+<h2>List of user</h2>
+<a class="btn btn-primary btn-sm" href="/Client/Create">New</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Craeted Date</th>
+            <th>Action</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListClients)
+        {
+           <tr>
+               <td>@item.id</td>
+               <td>@item.name</td>
+               <td>@item.email</td>
+               <td>@item.phone</td>
+               <td>@item.address</td>
+               <td>@item.created_at</td>
+               <td>
+                    <a class="btn btn-primary btn-sm" href="/Client/Edit?id">Edit</a>
+                    <a class="btn btn-primary btn-sm" href="/Client/Delete?id">Delete</a>
+               </td>
+
+           </tr> 
+        }
+
+    </tbody>
+</table>
